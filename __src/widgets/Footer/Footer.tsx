@@ -1,3 +1,4 @@
+import { ThemeToggler } from "@/features";
 import { baseTitle, cn } from "@/shared/libs";
 import Link from "next/link";
 import { IFooter } from "./Footer.type";
@@ -8,16 +9,16 @@ export const Footer = ({ className, ...props }: IFooter) => {
   return (
     <footer
       className={cn(
-        "bg-app-clr-dark text-app-clr-light text-center",
+        "bg-app-clr-dark text-center text-sm text-app-clr-light",
         className,
       )}
       {...props}
     >
       <div className="container">
-        <div className="flex flex-col items-center justify-between gap-y-5 py-6 lg:flex-row">
+        <div className="flex flex-col items-center justify-between gap-y-5 py-6 lg:flex-row dark:border-t dark:border-t-app-clr-light">
           <p>
             <Link
-              className="inline-block font-bold underline transition-colors duration-300 ease-in-out active:text-blue-500 [@media(hover:hover)]:hover:text-blue-500"
+              className="inline-block active:underline [@media(hover:hover)]:hover:underline"
               href="/"
               prefetch={false}
             >
@@ -47,6 +48,9 @@ export const Footer = ({ className, ...props }: IFooter) => {
                 >
                   Политика конфиденциальности
                 </Link>
+              </li>
+              <li>
+                <ThemeToggler />
               </li>
             </ul>
           </div>

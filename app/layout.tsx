@@ -1,8 +1,10 @@
+import { Providers } from "@/app/providers";
 import "@/app/styles/_index.scss";
+import { ProgressBar } from "@/features";
 import { appTitle, cn } from "@/shared/libs";
 import { Footer, Header, Sidebar } from "@/widgets";
 import type { Metadata, Viewport } from "next";
-import { ReactNode } from "react";
+import { ReactNode, Suspense } from "react";
 import { interFont } from "./fonts";
 
 export const metadata: Metadata = {
@@ -15,7 +17,7 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: "#141414",
-  colorScheme: "light",
+  colorScheme: "light dark",
 };
 
 const RootLayout = ({
@@ -24,18 +26,27 @@ const RootLayout = ({
   children: ReactNode;
 }>) => {
   return (
-    <html className={cn("h-full !scroll-smooth", interFont.variable)} lang="ru">
-      <body className="bg-app-clr-light text-app-clr-dark font-app-fm-inter h-full text-base font-normal antialiased rendering-speed">
-        <div className="flex min-h-full flex-col overflow-hidden">
-          <Header className="lg:hidden" />
-          <div className="container flex-auto lg:pt-6">
-            <div className="pb-28 lg:grid lg:grid-cols-[16rem_1fr] lg:gap-x-6">
-              <Sidebar className="hidden lg:block" />
-              <main id="main">{children}</main>
+    <html
+      className={cn("h-full !scroll-smooth", interFont.variable)}
+      lang="ru"
+      suppressHydrationWarning
+    >
+      <body className="h-full bg-app-clr-light font-app-fm-inter text-base font-normal text-app-clr-dark antialiased rendering-speed dark:bg-app-clr-dark dark:text-app-clr-light">
+        <Providers>
+          <div className="flex min-h-full flex-col overflow-hidden">
+            <Header className="lg:hidden" />
+            <div className="container flex-auto lg:pt-6">
+              <div className="pb-28 lg:grid lg:grid-cols-[16rem_1fr] lg:gap-x-6">
+                <Sidebar className="hidden lg:block" />
+                <main id="main">{children}</main>
+              </div>
             </div>
+            <Footer />
           </div>
-          <Footer />
-        </div>
+        </Providers>
+        <Suspense fallback={null}>
+          <ProgressBar />
+        </Suspense>
       </body>
     </html>
   );
