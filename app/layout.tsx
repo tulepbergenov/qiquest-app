@@ -1,7 +1,9 @@
 import "@/app/styles/_index.scss";
 import { appTitle } from "@/shared/libs";
+import classNames from "classnames";
 import type { Metadata, Viewport } from "next";
 import { ReactNode } from "react";
+import { interFont } from "./fonts";
 
 export const metadata: Metadata = {
   title: appTitle(),
@@ -12,7 +14,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#000000",
+  themeColor: "#141414",
   colorScheme: "light",
 };
 
@@ -22,9 +24,16 @@ const RootLayout = ({
   children: ReactNode;
 }>) => {
   return (
-    <html lang="ru">
-      <body>
-        <main>{children}</main>
+    <html
+      className={classNames("h-full !scroll-smooth", interFont.variable)}
+      lang="ru"
+    >
+      <body className="bg-app-clr-light text-app-clr-dark font-app-fm-inter h-full text-base font-normal antialiased rendering-speed">
+        <div className="flex min-h-full flex-col overflow-hidden">
+          <main className="flex-auto" id="main">
+            {children}
+          </main>
+        </div>
       </body>
     </html>
   );

@@ -7,7 +7,19 @@ const config: Config = {
     "./public/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
+    container: {
+      center: true,
+      padding: "2rem",
+    },
+    extend: {
+      colors: {
+        "app-clr-dark": "#141414",
+        "app-clr-light": "#F3F3F3",
+      },
+      fontFamily: {
+        "app-fm-inter": ["var(--app-fm-inter)", "system-ui"],
+      },
+    },
   },
   plugins: [
     require("tailwindcss-text-rendering"),

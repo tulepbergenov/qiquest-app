@@ -8,10 +8,16 @@ export const metadata: Metadata = {
 const Home = () => {
   return (
     <section>
-      <header>
+      <header className="container sm:max-w-screen-sm">
         <h1>Главная</h1>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam
+          repellat consequatur placeat accusamus neque ab excepturi quasi!
+          Aspernatur delectus rerum adipisci reiciendis numquam facere
+          architecto asperiores quo, corrupti ullam itaque.
+        </p>
       </header>
-      <div className="mx-auto flex max-w-screen-sm flex-col gap-y-3 px-4">
+      <div className="mx-auto mt-5 flex max-w-screen-sm flex-col gap-y-3 px-4">
         <input placeholder="Текст" type="text" />
         <input placeholder="Текст" type="password" />
         <input placeholder="Текст" type="email" />
