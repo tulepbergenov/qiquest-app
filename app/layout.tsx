@@ -29,7 +29,7 @@ const RootLayout = ({
         <div className="flex min-h-full flex-col overflow-hidden">
           <Header className="lg:hidden" />
           <div className="container flex-auto lg:pt-6">
-            <div className="grid grid-cols-[16rem_1fr] gap-x-6 pb-28">
+            <div className="pb-28 lg:grid lg:grid-cols-[16rem_1fr] lg:gap-x-6">
               <Sidebar className="hidden lg:block" />
               <main id="main">{children}</main>
             </div>
