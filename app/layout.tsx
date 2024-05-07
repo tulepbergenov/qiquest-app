@@ -1,5 +1,6 @@
 import "@/app/styles/_index.scss";
 import { appTitle, cn } from "@/shared/libs";
+import { Footer, Header, Sidebar } from "@/widgets";
 import type { Metadata, Viewport } from "next";
 import { ReactNode } from "react";
 import { interFont } from "./fonts";
@@ -26,9 +27,14 @@ const RootLayout = ({
     <html className={cn("h-full !scroll-smooth", interFont.variable)} lang="ru">
       <body className="bg-app-clr-light text-app-clr-dark font-app-fm-inter h-full text-base font-normal antialiased rendering-speed">
         <div className="flex min-h-full flex-col overflow-hidden">
-          <main className="flex-auto" id="main">
-            {children}
-          </main>
+          <Header className="lg:hidden" />
+          <div className="container flex-auto lg:pt-6">
+            <div className="grid grid-cols-[16rem_1fr] gap-x-6 pb-28">
+              <Sidebar className="hidden lg:block" />
+              <main id="main">{children}</main>
+            </div>
+          </div>
+          <Footer />
         </div>
       </body>
     </html>
