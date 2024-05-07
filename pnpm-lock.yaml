@@ -8,9 +8,9 @@ importers:
 
   .:
     dependencies:
-      classnames:
-        specifier: ^2.5.1
-        version: 2.5.1
+      clsx:
+        specifier: ^2.1.1
+        version: 2.1.1
       next:
         specifier: 14.2.3
         version: 14.2.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.0)
@@ -20,6 +20,9 @@ importers:
       react-dom:
         specifier: ^18
         version: 18.3.1(react@18.3.1)
+      tailwind-merge:
+        specifier: ^2.3.0
+        version: 2.3.0
     devDependencies:
       '@tailwindcss/forms':
         specifier: ^0.5.7
@@ -594,11 +597,12 @@ packages:
     resolution: {integrity: sha512-7VT13fmjotKpGipCW9JEQAusEPE+Ei8nl6/g4FBAmIm0GOOLMua9NDDo/DWp0ZAxCr3cPq5ZpBqmPAQgDda2Pw==}
     engines: {node: '>= 8.10.0'}
 
-  classnames@2.5.1:
-    resolution: {integrity: sha512-saHYOzhIQs6wy2sVxTM6bUDsQO4F50V9RQ22qBpEdCW+I+/Wmke2HOl6lS6dTpdxVhb88/I6+Hs+438c3lfUow==}
-
   client-only@0.0.1:
     resolution: {integrity: sha512-IV3Ou0jSMzZrd3pZ48nLkT9DA7Ag1pnPzaiQhpW7c3RbcqqzvzzVu+L8gfqMp/8IM2MQtSiqaCxrrcfu8I8rMA==}
+
+  clsx@2.1.1:
+    resolution: {integrity: sha512-eYm0QWBtUrBWZWG0d386OGAw16Z995PiOVo2B7bjWSbHedGl5e0ZWaq65kOGgUSNesEIDkB9ISbTg/JK9dhCZA==}
+    engines: {node: '>=6'}
 
   color-convert@1.9.3:
     resolution: {integrity: sha512-QfAUtd+vFdAtFQcC8CCyYt1fYWxSqAiK2cSD6zDB8N3cpsEBAvRxp9zOGg6G/SHHJYAT88/az/IuDGALsNVbGg==}
@@ -2070,6 +2074,9 @@ packages:
     resolution: {integrity: sha512-w2sfv80nrAh2VCbqR5AK27wswXhqcck2AhfnNW76beQXskGZ1V12GwS//yYVa3d3fcvAip2OUnbDAjW2k3v9fA==}
     engines: {node: '>=10.0.0'}
 
+  tailwind-merge@2.3.0:
+    resolution: {integrity: sha512-vkYrLpIP+lgR0tQCG6AP7zZXCTLc1Lnv/CCRT3BqJ9CZ3ui2++GPaGb1x/ILsINIMSYqqvrpqjUFsMNLlW99EA==}
+
   tailwindcss-text-rendering@1.0.2:
     resolution: {integrity: sha512-KVEfQDvSXPqiwdzFJVuv+csxjVDy1yvcXX3rGaUQlTcsmS3SBXFBNkus1Foa7S0EQ8ZpnLCnakrjMSIyL1kCAw==}
 
@@ -2779,9 +2786,9 @@ snapshots:
     optionalDependencies:
       fsevents: 2.3.3
 
-  classnames@2.5.1: {}
-
   client-only@0.0.1: {}
+
+  clsx@2.1.1: {}
 
   color-convert@1.9.3:
     dependencies:
@@ -4424,6 +4431,10 @@ snapshots:
       slice-ansi: 4.0.0
       string-width: 4.2.3
       strip-ansi: 6.0.1
+
+  tailwind-merge@2.3.0:
+    dependencies:
+      '@babel/runtime': 7.24.5
 
   tailwindcss-text-rendering@1.0.2: {}
 

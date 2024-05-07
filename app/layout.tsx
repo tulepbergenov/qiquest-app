@@ -1,6 +1,5 @@
 import "@/app/styles/_index.scss";
-import { appTitle } from "@/shared/libs";
-import classNames from "classnames";
+import { appTitle, cn } from "@/shared/libs";
 import type { Metadata, Viewport } from "next";
 import { ReactNode } from "react";
 import { interFont } from "./fonts";
@@ -24,10 +23,7 @@ const RootLayout = ({
   children: ReactNode;
 }>) => {
   return (
-    <html
-      className={classNames("h-full !scroll-smooth", interFont.variable)}
-      lang="ru"
-    >
+    <html className={cn("h-full !scroll-smooth", interFont.variable)} lang="ru">
       <body className="bg-app-clr-light text-app-clr-dark font-app-fm-inter h-full text-base font-normal antialiased rendering-speed">
         <div className="flex min-h-full flex-col overflow-hidden">
           <main className="flex-auto" id="main">
